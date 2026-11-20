@@ -5,10 +5,11 @@ each portrait page of a PDF on the left of a landscape page and leaves the
 right side free for handwritten comments. Open the result in GoodNotes,
 Notability or any other annotation app.
 
-- **Import** a PDF (button, ⌘O / Ctrl+O, or drag it onto the window)
-- **Preview** each page live; ← → to flip pages
+- **Open** a PDF (⌘O / Ctrl+O, drag it onto the window, or onto the Dock icon on Mac)
+- **Preview** each page live; ← → or scroll to flip pages
+- Follows the system light / dark appearance
 - **Adjust** notes width (20–60%), background (blank, lines, grid, dots), divider line
-- **Save to** the paper's folder or any folder you pick, then **Export PDF**
+- **Save to** the paper's folder or any folder you pick, then **Export PDF** (⌘E / Ctrl+E)
   (`<name> (review).pdf`)
 
 The paper is placed as vector content, so text stays sharp, searchable and

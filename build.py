@@ -19,3 +19,19 @@ args = [
 if sys.platform == "darwin":
     args += ["--osx-bundle-identifier", "com.reviewmargin.app"]
 subprocess.run(args, cwd=root, check=True)
+
+if sys.platform == "darwin":
+    # Let Finder "Open With" and the Dock icon accept PDFs.
+    import plistlib
+    plist = root / "dist/Review Margin.app/Contents/Info.plist"
+    info = plistlib.loads(plist.read_bytes())
+    info["CFBundleDocumentTypes"] = [{
+        "CFBundleTypeName": "PDF Document",
+        "CFBundleTypeRole": "Viewer",
+        "LSHandlerRank": "Alternate",
+        "LSItemContentTypes": ["com.adobe.pdf"],
+    }]
+    info["NSHighResolutionCapable"] = True
+    info["CFBundleShortVersionString"] = "1.0.0"
+    plist.write_bytes(plistlib.dumps(info))
+    subprocess.run(["codesign", "--force", "--deep", "-s", "-", str(plist.parent.parent)], check=True)
