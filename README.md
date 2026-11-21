@@ -42,3 +42,7 @@ Build a standalone app for the current OS: `pip install pyinstaller pillow && py
 - `app.py`: the Qt (PySide6) app
 - `review_margin.py`: CLI
 - `build.py`, `make_icon.py`: packaging and icon
+
+## License
+
+MIT. See [LICENSE](LICENSE).
